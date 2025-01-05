@@ -1,7 +1,16 @@
-import { Elysia } from "elysia";
+import { Elysia, t } from 'elysia'
+import { swagger } from '@elysiajs/swagger'
+import { note } from './note'
+import { folder_main } from './folder_main'
+import { folder_sub } from './folder_sub'
+import { file } from './file'
+import { cors } from '@elysiajs/cors'
 
-const app = new Elysia().get("/", () => "Hello Elysia").listen(3000);
-
-console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
-);
+const app = new Elysia()
+    .use(swagger())
+    .use(cors())
+    .use(note)
+    .use(folder_main)
+    .use(folder_sub)
+    .use(file)
+    .listen(3000)
