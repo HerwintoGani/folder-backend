@@ -13,3 +13,11 @@ bun run dev
 ```
 
 Open http://localhost:3000/ with your browser to see the result.
+
+## Database
+Please import the database first before using the application, remember to change .env postgre connection
+
+Database used : Postgre SQL 16.5
+Database tools : Heidi SQL
+
+Run alongside folder-frontend
